@@ -687,7 +687,7 @@ public class ProfileImageLogicImpl implements ProfileImageLogic {
 		if(StringUtils.isBlank(email)){
 			return null;
 		}
-				
+		email = email.toLowerCase(); //Added by E.Duquenoy (eric.duquenoy@univ-littoral.fr) - june 2017		
 		return ProfileConstants.GRAVATAR_BASE_URL + ProfileUtils.calculateMD5(email) + "?s=200";
 	}
 	
