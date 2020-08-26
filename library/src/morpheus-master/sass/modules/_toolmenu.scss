@@ -105,7 +105,7 @@ body.is-logged-out{
 							}
 						}
 						span.#{$namespace}toolsNav__menuitem--title{
-							white-space: pre;
+							white-space: break-spaces; //(ancienne valeur : white-space: pre;) Modif . Eric DUQUENOY
 						}
 					}
 					&.is-current{
@@ -496,9 +496,9 @@ nav#subSites{
 				.#{$namespace}toolsNav__menuitem--title{
 					@if $tool-menu-icon-on-left {
 						display: inline-block;
-						width: calc(#{$tool-menu-width} - #{$tool-menu-width-collapsed} - #{$standard-spacing});
+						//width: calc(#{$tool-menu-width} - #{$tool-menu-width-collapsed} - #{$standard-spacing}); //mise en commentaire MODIF ERIC DUQUENOY 2020 car problème dans les titres de subsites, le texte ne remplit pas tout l'espace disponible et est tronqué
 						vertical-align: middle;
-						margin-left: $standard-spacing;
+						margin-left: $standard-spacing;						 
 						@media #{$phone}{
 							width: 90%;
 						}
@@ -507,7 +507,7 @@ nav#subSites{
 						width: 100%;
 					}
 					text-overflow: ellipsis;
-					white-space: pre;
+					white-space: break-spaces; //MODIF. (anc. valeur : white-space: pre;) ERIC DUQUENOY 18 Aout 2020 (pour avoir titre menu gauche sur plusieurs lignes)
 					overflow: hidden;
 				}
 				&.is-invisible {
